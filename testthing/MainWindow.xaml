@@ -1,0 +1,60 @@
+﻿<Window x:Class="testthing.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:testthing"
+        mc:Ignorable="d"
+        Title="这是个WPF的轻钱包,你可以用任意语言快速实现这样的轻钱包，只要你能访问网络和处理json，真正需要你做的工作只有签名" Height="650" Width="955" Loaded="Window_Loaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Label Content="测试网高度" HorizontalAlignment="Left" Margin="46,34,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="labelHeight" Content="Label" HorizontalAlignment="Left" Margin="121,34,0,0" VerticalAlignment="Top"/>
+        <Label Content="地址1" HorizontalAlignment="Left" Margin="46,70,0,0" VerticalAlignment="Top" Width="58"/>
+        <TextBox x:Name="txtAddress" HorizontalAlignment="Left" Height="23" Margin="121,70,0,0" TextWrapping="Wrap" Text="ASJiT56jYKZgTN9FtGvjRenbdBKTZ98QVw" VerticalAlignment="Top" Width="258"/>
+        <Button Content="check" HorizontalAlignment="Left" Margin="394,73,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <ListBox x:Name="listAddressInfo" HorizontalAlignment="Left" Height="130" Margin="54,164,0,0" VerticalAlignment="Top" Width="415"/>
+        <Label Content="地址2" HorizontalAlignment="Left" Margin="46,100,0,0" VerticalAlignment="Top" Width="70"/>
+        <TextBox x:Name="txtAddress2" HorizontalAlignment="Left" Height="23" Margin="121,100,0,0" TextWrapping="Wrap" Text="AJEhCABbWoKGTQS2rxhUG8Ksda9vsV9Esn" VerticalAlignment="Top" Width="258"/>
+        <Label Content="地址3" HorizontalAlignment="Left" Margin="46,128,0,0" VerticalAlignment="Top" Width="70"/>
+        <TextBox x:Name="txtAddress3" HorizontalAlignment="Left" Height="23" Margin="121,128,0,0" TextWrapping="Wrap" Text="AGTBUrvtrvDrKccv2c5n5Z9iHxz827WmpM" VerticalAlignment="Top" Width="258" TextChanged="txtAddress_Copy1_TextChanged"/>
+        <Button Content="check" HorizontalAlignment="Left" Margin="394,103,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click2"/>
+        <Button Content="check" HorizontalAlignment="Left" Margin="394,132,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click3"/>
+        <GroupBox Header="1.信息查询（轻钱包联盟API）" HorizontalAlignment="Left" Height="298" Margin="10,10,0,0" VerticalAlignment="Top" Width="473"/>
+        <GroupBox Header="2.构造交易（轻钱包联盟API）" HorizontalAlignment="Left" Height="298" Margin="488,10,0,0" VerticalAlignment="Top" Width="444">
+            <Grid HorizontalAlignment="Left" Height="288" VerticalAlignment="Top" Width="434" Margin="0,0,-2,-12">
+                <Label Content="发送方" HorizontalAlignment="Left" Margin="21,10,0,0" VerticalAlignment="Top"/>
+                <Label Content="接收方" HorizontalAlignment="Left" Margin="21,40,0,0" VerticalAlignment="Top"/>
+                <Label Content="资产" HorizontalAlignment="Left" Margin="21,70,0,0" VerticalAlignment="Top"/>
+                <Label Content="数量" HorizontalAlignment="Left" Margin="21,100,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="txtSender" HorizontalAlignment="Left" Height="23" Margin="72,14,0,0" TextWrapping="Wrap" Text="ASJiT56jYKZgTN9FtGvjRenbdBKTZ98QVw" VerticalAlignment="Top" Width="343"/>
+                <TextBox x:Name="txtAmount" HorizontalAlignment="Left" Height="23" Margin="72,102,0,0" TextWrapping="Wrap" Text="0.1" VerticalAlignment="Top" Width="120"/>
+                <TextBox x:Name="txtAsset" HorizontalAlignment="Left" Height="23" Margin="72,72,0,0" TextWrapping="Wrap" Text="602c79718b16e442de58778e148d0b1084e3b2dffd5de6b7b16cee7969282de7" VerticalAlignment="Top" Width="343"/>
+                <TextBox x:Name="txtRecv" HorizontalAlignment="Left" Height="23" Margin="72,44,0,0" TextWrapping="Wrap" Text="AJEhCABbWoKGTQS2rxhUG8Ksda9vsV9Esn" VerticalAlignment="Top" Width="343"/>
+                <Button Content="构造转账交易，其他交易慢慢增加" HorizontalAlignment="Left" Margin="197,102,0,0" VerticalAlignment="Top" Width="218" RenderTransformOrigin="1.187,0.526" Click="Button_Click_1"/>
+                <TextBlock x:Name="txtRaw" HorizontalAlignment="Left" Margin="22,138,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="127" Width="393"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="3.签名交易（客户处理）" HorizontalAlignment="Left" Height="296" Margin="10,313,0,0" VerticalAlignment="Top" Width="473">
+            <Grid HorizontalAlignment="Left" Height="276" Margin="0,10,-2,-12" VerticalAlignment="Top" Width="463">
+                <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="wif" VerticalAlignment="Top"/>
+                <TextBox x:Name="txtwif" HorizontalAlignment="Left" Height="23" Margin="42,9,0,0" TextWrapping="Wrap" Text="Ky1X7GjA1y7UrUWhSWvAvNGdgWNvVJcL1t3AgRMApTcPkf85XS3i" VerticalAlignment="Top" Width="411"/>
+                <ListBox x:Name="listhash" HorizontalAlignment="Left" Height="161" Margin="10,68,0,0" VerticalAlignment="Top" Width="443"/>
+                <Button Content="解析wif，我们不制定钱包文件格式" HorizontalAlignment="Left" Margin="10,37,0,0" VerticalAlignment="Top" Width="200" Click="Button_Click_3"/>
+                <Button Content="Sign Data" HorizontalAlignment="Left" Margin="10,247,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_4"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="4.广播交易（轻钱包联盟API）" HorizontalAlignment="Left" Height="296" Margin="488,313,0,0" VerticalAlignment="Top" Width="444">
+            <Grid HorizontalAlignment="Left" Height="276" Margin="0,10,-2,-12" VerticalAlignment="Top" Width="434">
+                <TextBox x:Name="txtBroadRaw" HorizontalAlignment="Left" Height="129" Margin="10,48,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="414"/>
+                <Button Content="广播" HorizontalAlignment="Left" Margin="327,177,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_2"/>
+            </Grid>
+        </GroupBox>
+
+    </Grid>
+</Window>

@@ -1,0 +1,14 @@
+D:\git\ilovethinwallet\testthing\obj\Debug\testthing.csprojResolveAssemblyReference.cache
+D:\git\ilovethinwallet\testthing\obj\Debug\MainWindow.g.cs
+D:\git\ilovethinwallet\testthing\obj\Debug\App.g.cs
+D:\git\ilovethinwallet\testthing\obj\Debug\testthing_MarkupCompile.cache
+D:\git\ilovethinwallet\testthing\obj\Debug\testthing_MarkupCompile.lref
+D:\git\ilovethinwallet\testthing\bin\Debug\testthing.exe.config
+D:\git\ilovethinwallet\testthing\bin\Debug\testthing.exe
+D:\git\ilovethinwallet\testthing\bin\Debug\testthing.pdb
+D:\git\ilovethinwallet\testthing\obj\Debug\MainWindow.baml
+D:\git\ilovethinwallet\testthing\obj\Debug\testthing.g.resources
+D:\git\ilovethinwallet\testthing\obj\Debug\testthing.Properties.Resources.resources
+D:\git\ilovethinwallet\testthing\obj\Debug\testthing.csproj.GenerateResource.Cache
+D:\git\ilovethinwallet\testthing\obj\Debug\testthing.exe
+D:\git\ilovethinwallet\testthing\obj\Debug\testthing.pdb
