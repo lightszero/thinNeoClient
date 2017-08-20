@@ -110,7 +110,7 @@ namespace testthing
 
         private async void Button_Click_2(object sender, RoutedEventArgs e)
         {//广播交易
-            var json = await thinWallet.boardCast_Transfer(publicKey_NoComp, this.txtBroadRaw.Text, this.txtRaw.Text);
+            var json = await thinWallet.boardCast_Transfer(Helper.Bytes2HexString(publicKey), this.txtBroadRaw.Text, this.txtRaw.Text);
             if(json["result"].AsBool()==true)
             {
                 MessageBox.Show("转账成功");

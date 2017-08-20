@@ -10,7 +10,7 @@ namespace NEO.AllianceOfThinWallet
 {
     public static class thinWallet
     {
-        static string api = "http://api.otcgo.cn/testnet";
+        static string api = "https://api.otcgo.cn/testnet";
         static public async Task<int> getHeight()
         {
             WebClient wc = new WebClient();
