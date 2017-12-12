@@ -53,7 +53,7 @@ namespace testthing
 
             var info = await thinWallet.checkAddressInfo(address);
             this.listAddressInfo.Items.Clear();
-            if (info.Count == 0)
+            if (info == null || info.Count == 0)
             {
                 this.listAddressInfo.Items.Add("地址无信息");
                 return;
@@ -111,7 +111,7 @@ namespace testthing
         private async void Button_Click_2(object sender, RoutedEventArgs e)
         {//广播交易
             var json = await thinWallet.boardCast_Transfer(Helper.Bytes2HexString(publicKey), this.txtBroadRaw.Text, this.txtRaw.Text);
-            if(json["result"].AsBool()==true)
+            if (json["result"].AsBool() == true)
             {
                 MessageBox.Show("转账成功");
             }
@@ -130,7 +130,7 @@ namespace testthing
             var txt = this.txtwif.Text;
             var bytes_PrivateKey = Helper.GetPrivateKeyFromWIF(txt);
             var bytes_PublicKey = Helper.GetPublicKeyFromPrivateKey(bytes_PrivateKey);
-            publicKey_NoComp = Helper.Bytes2HexString( Helper.GetPublicKeyFromPrivateKey_NoComp(bytes_PrivateKey));
+            publicKey_NoComp = Helper.Bytes2HexString(Helper.GetPublicKeyFromPrivateKey_NoComp(bytes_PrivateKey));
             var bytes_PublicKeyHash = Helper.GetPublicKeyHash(bytes_PublicKey);
             this.address = Helper.GetAddressFromPublicKey(bytes_PublicKey);
             this.privateKey = bytes_PrivateKey;
@@ -140,7 +140,7 @@ namespace testthing
             this.listhash.Items.Add("private key:" + Helper.Bytes2HexString(bytes_PrivateKey));
             this.listhash.Items.Add("public key:" + Helper.Bytes2HexString(bytes_PublicKey));
             this.listhash.Items.Add("publickeyhash:" + Helper.Bytes2HexString(bytes_PublicKeyHash));
-            this.listhash.Items.Add("publickey_nocomp:" +(publicKey_NoComp));
+            this.listhash.Items.Add("publickey_nocomp:" + (publicKey_NoComp));
             this.listhash.Items.Add("address:" + address);
         }
 
